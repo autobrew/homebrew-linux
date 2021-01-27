@@ -15,12 +15,10 @@ RUN brew install libgit2-static --build-bottle
 SHELL ["/bin/bash", "-c"]
 
 # Create output bundle
-RUN mkdir -p /bundle/libgit2 && \
+RUN mkdir -p /bundle/libgit2/lib && \
   export BREWDIR=$(brew --prefix) && \
-  cp -R $BREWDIR/opt/openssl/{include,lib} /bundle/libgit2 && \
-  cp -R $BREWDIR/opt/zlib-static/{include,lib} /bundle/libgit2 && \
-  cp -R $BREWDIR/opt/pcre-static/{include,lib} /bundle/libgit2 && \
-  cp -R $BREWDIR/opt/libssh2-static/{include,lib} /bundle/libgit2 && \
-  cp -R $BREWDIR/opt/libgit2-static/{include,lib} /bundle/libgit2 
+  cp -R $BREWDIR/opt/libgit2-static/include /bundle/libgit2/ && \
+  cp -R $BREWDIR/opt/{openssl,libgit2-static,zlib-static,pcre-static,libssh2-static}/lib/*.a /bundle/libgit2/lib/
 
-RUN cd /bundle && tar -czvf libgit2-1.1.0.x86_64_linux.tar.gz libgit2
+RUN cd /bundle && \
+  tar -czvf libgit2-1.1.0.x86_64_linux.tar.gz libgit2
