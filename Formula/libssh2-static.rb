@@ -21,7 +21,7 @@ class Libssh2Static < Formula
 
   depends_on "openssl@1.1"
 
-  uses_from_macos "zlib"
+  keg_only "static build --with-pic"
 
   def install
     args = %W[

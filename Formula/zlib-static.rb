@@ -12,7 +12,7 @@ class ZlibStatic < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  keg_only :provided_by_macos
+  keg_only "static build with -fPIC"
 
   # https://zlib.net/zlib_how.html
   resource "test_artifact" do

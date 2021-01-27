@@ -15,6 +15,8 @@ class Libgit2Static < Formula
   depends_on "pkg-config" => :build
   depends_on "libssh2"
 
+  keg_only "static build with DCMAKE_POSITION_INDEPENDENT_CODE"
+
   def install
     args = std_cmake_args
     args << "-DBUILD_EXAMPLES=YES"

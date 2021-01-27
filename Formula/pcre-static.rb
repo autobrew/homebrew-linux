@@ -19,6 +19,8 @@ class PcreStatic < Formula
     depends_on "libtool" => :build
   end
 
+  keg_only "static build --with-pic"
+
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
