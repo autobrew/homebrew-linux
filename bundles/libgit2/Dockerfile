@@ -1,4 +1,4 @@
-FROM linuxbrew/brew
+FROM homebrew/brew
 
 # Load our custom tap
 RUN \
@@ -10,6 +10,9 @@ RUN brew install zlib-static --build-bottle
 RUN brew install pcre-static --build-bottle
 RUN brew install libssh2-static --build-bottle
 RUN brew install libgit2-static --build-bottle
+
+# Just to test if it worked
+RUN brew bottle zlib-static pcre-static libssh2-static libgit2-static
 
 # Enable brace expansion below
 SHELL ["/bin/bash", "-c"]
