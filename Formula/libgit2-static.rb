@@ -13,7 +13,8 @@ class Libgit2Static < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on "libssh2"
+  depends_on "autobrew/core/libssh2-static"
+  depends_on "autobrew/core/openssl"
 
   keg_only "static build with DCMAKE_POSITION_INDEPENDENT_CODE"
 

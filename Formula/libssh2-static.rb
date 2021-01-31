@@ -19,7 +19,7 @@ class Libssh2Static < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "openssl@1.1"
+  depends_on "autobrew/core/openssl"
 
   keg_only "static build --with-pic"
 
@@ -32,7 +32,7 @@ class Libssh2Static < Formula
       --disable-examples-build
       --with-openssl
       --with-libz
-      --with-libssl-prefix=#{Formula["openssl@1.1"].opt_prefix}
+      --with-libssl-prefix=/home/linuxbrew/.linuxbrew/opt/openssl
       --with-pic
     ]
 
